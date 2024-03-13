@@ -16,24 +16,6 @@ const readJsonFile = (fileName) => {
   }
 };
 
-router.get('/answers', (req, res) => {
-  const answersData = readJsonFile('answers');
-  if (answersData) {
-    res.json(answersData);
-  } else {
-    res.status(500).json({ error: 'Failed to load answers data' });
-  }
-});
-
-router.get('/questions', (req, res) => {
-  const questionsData = readJsonFile('questions');
-  if (questionsData) {
-    res.json(questionsData);
-  } else {
-    res.status(500).json({ error: 'Failed to load questions data' });
-  }
-});
-
 router.get('/age', (req, res) => {
   const questionsData = readJsonFile('questions');
   const answersData = readJsonFile('answers');
